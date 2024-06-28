@@ -36,14 +36,11 @@ if [[ " ${available_versions[@]} " =~ " ${version} " ]]; then
         sed -i -E "s~^(NUMBER_OF_CONCURRENT_STREAMINGS=).*~\1${NUMBER_OF_CONCURRENT_STREAMINGS}~" .env
     else
         # Create new .env file
-        touch .env
-		chmod 777 .env
         echo "BBB_URL=${BBB_URL}" >> .env
         echo "BBB_SECRET=${BBB_SECRET}" >> .env
         echo "NUMBER_OF_CONCURRENT_STREAMINGS=${NUMBER_OF_CONCURRENT_STREAMINGS}">>.env
       
     fi
-    chmod 777 .env 
     cat .env
     
     cd ..
