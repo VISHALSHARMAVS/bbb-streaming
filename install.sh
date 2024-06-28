@@ -23,9 +23,9 @@ if [[ " ${available_versions[@]} " =~ " ${version} " ]]; then
     cd streaming-server/
     echo "$(pwd)"
    # Read the values from the bbb-web.properties file
-    BBB_URL=$(grep -oP '(?<=bigbluebutton\.web\.serverURL=).*' /etc/bigbluebutton/bbb-web.properties)
+    BBB_URL=$(grep -oP '(?<=bigbluebutton\.web\.serverURL=).*' /etc/bigbluebutton/bigbluebutton-web/grails-app/conf/bigbluebutton.properties)
     BBB_URL="${BBB_URL}/bigbluebutton/"
-    BBB_SECRET=$(grep -oP '(?<=securitySalt=).*' /etc/bigbluebutton/bbb-web.properties)
+    BBB_SECRET=$(grep -oP '(?<=securitySalt=).*' /etc/bigbluebutton/bigbluebutton-web/grails-app/conf/bigbluebutton.properties)
     NUMBER_OF_CONCURRENT_STREAMINGS=1
 
     # Check if .env file exists
